@@ -33,6 +33,10 @@
     --global-color-neutral-800: #3B3B3B;
     --global-color-neutral-900: #222222;
 
+    --global-color-orange: #fcb972;
+    --global-color-orange-dark: #a85905;
+    --global-color-orange-middel: #f58916;
+
     /* global page settings */
     --global-page-backgroundColor: var(--global-color-neutral-000);
     --global-page-color: var(--global-color-neutral-900);
@@ -88,7 +92,7 @@
 */
 
 html {
-    background-color: var(--global-page-backgroundColor);
+    background-color: var(--global-color-orange);
     color: var(--global-page-color);
     font-size: 100%;
     line-height: 1.5;
@@ -100,6 +104,12 @@ html {
 
 body {
     margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* min-height: 100vh; */
+    padding-top: 10vh;
 }
 
 *,
@@ -221,7 +231,7 @@ hr {
 }
 
 a {
-    --link-color: var(--global-color-primary-500);
+    --link-color: var(--global-color-orange-dark);
     color: var(--link-color);
     outline-color: var(--link-outlineColor, var(--link-color));
     outline-width: medium;
@@ -506,6 +516,83 @@ input::placeholder {
 /*------------------------------------*\
 #COMPONENTS
 \*------------------------------------*/
+
+.c-app{
+    background-color: var(--global-color-neutral-050);
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 1.5rem;
+    margin: 1.5rem;
+}
+
+.c-app__joke-wrapper{
+    padding-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    width: 40rem;
+}
+
+.c-binnenste{
+    padding: 0 2rem;
+}
+
+.c-joke{
+    font-size: 1.5rem;
+    font-weight: 400;
+    padding: 4rem 2rem 2rem 2rem;
+    max-width: 40rem;
+    margin-bottom: 2rem;
+}
+
+.c-button{
+    padding: 1rem;
+    background-color: var(--global-color-orange-middel);
+    color: white;
+    display: flex;
+    justify-content: center;
+    font-size: 1rem;
+    font-weight: 400;
+    border-radius: 5rem;
+}
+
+.c-loading{
+    gap: .4rem;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2rem;
+    padding: 0 2rem;
+    /* TODO: shimmer/pulsation animation */
+}
+
+.c-loading__placeholder{
+    display: block;
+    width: 25vh;
+    height: 2.5rem;
+    border-radius: 0.5rem;
+    background-color: var(--global-color-orange-dark);
+}
+
+.c-loading__placeholder--half{
+    width: 50vh;
+}
+
+.c-loading__placeholder--full{
+    width: 100vh;
+}
+
+.c-link{
+    margin-bottom: 0;
+    padding-top: 1rem;
+    border-top: 1px solid var(--global-color-orange);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
 
 
 
@@ -849,6 +936,11 @@ input::placeholder {
         width: 83.3333333333% !important;
     }
 }
+
+.u-hidden{
+    display: none;
+}
+
 
 /*------------------------------------*\
 #MEDIA
